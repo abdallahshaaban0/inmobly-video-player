@@ -1,0 +1,28 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "~bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: 'audiowide';
+    src: url('/assets/fonts/roboto.ttf') format('truetype'),
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.mr-4 {
+    margin-right: 1rem;
+}
