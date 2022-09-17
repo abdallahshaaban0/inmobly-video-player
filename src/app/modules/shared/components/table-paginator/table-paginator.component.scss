@@ -1,0 +1,12 @@
+#page-link {
+    background-color: #e6dede;
+
+    &:hover {
+        background-color: hsl(0, 2%, 49%);
+        color: #fff !important;
+    }
+
+    &:focus {
+        box-shadow: unset;
+    }
+}

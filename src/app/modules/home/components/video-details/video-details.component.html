@@ -1,0 +1,50 @@
+<div class="video-details-container card pt-4" *ngIf="videoDetails">
+    <table class="table m-0">
+        <tbody>
+            <tr>
+                <td class="p-0">
+                    <div class="video-img"
+                        [ngStyle]="{'background-image':'url(' + videoDetails.snippet?.thumbnails?.high?.url +')'}">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="d-flex justify-content-space-between padding-4-rem" id="w-100">
+                    <h5 class="video-title">{{videoDetails?.snippet?.title}}</h5>
+                    <button class="btn btn-danger">Add to Favorite
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="d-flex justify-content-space-between padding-4-rem">
+                    <h6>
+                        Rate Now <h4 class="d-inline-flex">
+                            <app-star-rating [value]="3.14"></app-star-rating>
+                        </h4>
+                    </h6>
+                    <h6>Duration {{videoDetails?.contentDetails?.duration}}</h6>
+                    <h6>
+                        <span class="viewCount-container p-4">
+                            <i class="fa fa-solid fa-eye m-1"></i>
+                            {{videoDetails?.statistics?.viewCount}}
+                        </span>
+                        <span class="likeCount-container ">
+                            <i class="fa fa-solid fa-thumbs-o-up m-1"></i>
+                            {{videoDetails?.statistics?.likeCount}}
+                        </span>
+                    </h6>
+                </td>
+            </tr>
+            <tr>
+                <td class="padding-4-rem">
+                    <h6 class="text-danger font-weight-bold">Published on {{videoDetails?.snippet?.publishedAt |
+                        date:'MMM d,YYYY'}}</h6>
+                    <p class="pt-3">
+                        {{videoDetails?.snippet?.description}}
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,43 @@
+<section>
+    <div class="d-flex flex-row-reverse">
+        <!-- <h1 class="logo">
+            <a href="javascript:void(0)">Inmobly</a>
+        </h1> -->
+        <app-search-input (onSearch)="searchVideoList($event)"></app-search-input>
+    </div>
+    <div class="table-container">
+        <table class="table table-hover mt-4">
+            <thead class="table-header">
+                <tr>
+                    <th></th>
+                    <th scope="col" sortable="title" (click)="searchVideoList({order:'title'})">
+                        <i class="fa fa-solid fa-arrow-down"></i>
+                        Title
+                    </th>
+                    <th (click)="searchVideoList({order:'date'})">
+                        <i class="fa fa-solid fa-arrow-up"></i>
+                        Publish Date
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let video of videoList">
+                    <td><img class="video-img" [src]="video.snippet?.thumbnails?.high?.url"
+                            [alt]="video.snippet.description" />
+                    </td>
+                    <td>{{video?.snippet?.title}}</td>
+                    <td>{{video?.snippet?.publishedAt | date:'dd-MM-YYYY'}}</td>
+                    <td class="text-center btn-details-container">
+                        <button class="btn btn-outline-dark font-weight-bold" type="button"
+                            [routerLink]="['/home/video-details/', video.id.videoId]">Details
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 class="text-center" *ngIf="videoList?.length ==0"> No Videos Exist</h4>
+        <app-table-paginator [nextPageToken]="nextPageToken" [prevPageToken]="prevPageToken"
+            (onButtonClicked)="searchVideoList($event)"></app-table-paginator>
+    </div>
+</section>

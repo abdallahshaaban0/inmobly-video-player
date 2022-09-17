@@ -1,0 +1,35 @@
+.video-img {
+    width: 80%;
+    height: 50px;
+}
+
+.logo {
+    font-family: 'audiowide';
+}
+
+.table-header {
+    height: 60px;
+    vertical-align: middle;
+
+    tr {
+        border-top: 1px solid #dee2e6;
+        border-bottom: 2px solid #dee2e6;
+    }
+}
+
+td {
+    vertical-align: middle;
+    margin: 2px;
+    font-weight: 500;
+}
+
+.btn-details-container {
+    button {
+        padding: 0.4rem 1.4rem;
+        border: 1px solid #dee2e6;
+
+        &:hover {
+            background-color: #dc3545
+        }
+    }
+}
